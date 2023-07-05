@@ -1,42 +1,3 @@
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-  event.preventDefault(); // Menghentikan pengiriman form secara default
-
-  // Mengambil nilai input
-  var name = document.getElementById('name').value;
-  var email = document.getElementById('email').value;
-  var job = document.getElementById('job').value;
-  var message = document.getElementById('message').value;
-
-  // Reset pesan kesalahan sebelumnya
-  document.getElementById('email-error').innerHTML = '';
-  document.getElementById('message-error').innerHTML = '';
-
-  // Validasi input
-  var isValid = true;
-
-  if (!validateEmail(email)) {
-    document.getElementById('email-error').innerHTML = 'Email tidak valid';
-    isValid = false;
-  }
-
-  if (message === '') {
-    document.getElementById('message-error').innerHTML = 'Pesan harus diisi';
-    isValid = false;
-  }
-
-  // Jika input valid, lakukan pengiriman form
-  if (isValid) {
-    // Lakukan pengiriman form atau aksi lainnya
-    console.log('Form dikirim');
-    // ...
-  }
-});
-
-// Fungsi untuk validasi email menggunakan regular expression
-function validateEmail(email) {
-  var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return re.test(email);
-}
 
 $(document).ready(function() {
   $('.carousel').slick({
@@ -56,3 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
     menu.classList.toggle('open');
   });
 });
+
+var userIdInput = document.getElementById('userId');
+  userIdInput.value = generateRandomCode();
+
+  function generateRandomCode() {
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var code = '';
+    for (var i = 0; i < 6; i++) {
+      var randomIndex = Math.floor(Math.random() * characters.length);
+      code += characters.charAt(randomIndex);
+    }
+    return code;
+  }
