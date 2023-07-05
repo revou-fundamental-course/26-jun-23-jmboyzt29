@@ -1,0 +1,313 @@
+.circle-list {
+    list-style-type: none;
+    padding: 0;
+    counter-reset: list-counter;
+  }
+
+.circle-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+  }
+
+  .circle-list li:before {
+    content: counter(list-counter);
+    counter-increment: list-counter;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #3B93C3;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+  }
+.profil {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.menu li {
+  margin-right: 10px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  padding: 5px;
+  background-color: #fff;
+  color: #3B93C3;
+  }
+  .menu li a:hover {
+   background-color: #3B93C3;
+   color: #fff;
+}
+
+.container {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.column {
+    display: grid;
+    grid-gap: 10px;
+    background-color: #fff;
+  }
+
+.column_ {
+  float: left;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  }
+
+.card {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Style untuk form */
+.form-group {
+  margin-bottom: 20px;
+  padding-right: 25px;
+  }
+  label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  appearance: none;
+  }
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.carousel {
+  position: relative;
+}
+
+.slide {
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(200vh - 400px);
+  object-fit: contain;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 25.5px;
+  text-align: center;
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0);
+  color: #8F7B8D;
+  padding: 10px;
+  font-size:150%;
+  cursor: pointer;
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 10px;
+}
+
+/* CSS untuk item */
+.container-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item img {
+  width: 24px;
+  height: 24px;
+}
+
+.item .judul {
+  font-size: 14px;
+  font-weight: bold;
+}
+.keterangan {
+    font-size: 11px;
+  padding-left: 20px;
+}
+/* CSS untuk tampilan desktop */
+@media only screen and (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .column {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .column_ {
+    width: 50%;
+    }
+  
+  /* CSS untuk header */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    color: #3B93C3;
+  }
+  
+  .head {
+    display: flex;
+     font-size: 2.5em;
+     font-weight: bold;
+     margin-right: 10px;
+     font-family: 'Agdasima', sans-serif;
+  }
+  
+  .head_img {
+    display: none;
+  }
+  
+  /* CSS untuk footer */
+  footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+  }
+}
+
+/* CSS untuk tampilan seluler */
+@media only screen and (max-width: 767px) {
+.menu li:not(:first-child) {
+    display: none;
+  }
+
+  .menu li:first-child {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu.open li {
+    display: block;
+  }
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .column {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .column_ {
+    width: 100%;
+    }
+    
+  /* CSS untuk header */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.50px;
+    background-color: #fff;
+    font-family: 'Agdasima', sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+  }
+  
+  .head {
+    display: none;
+  }
+  
+  .head_img {
+    display: block;
+    width: 4em;
+    height: 4em;
+    margin-right: 10px;
+    padding-left: 5.50px;
+    
+  }
+  }
+  /* CSS untuk footer */
+  footer {
+    background-color: #3B93C3;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    font-size:11px;
+}
+/* css main*/
+    main {
+  font-family: 'Roboto', sans-serif;
+}
+.footer a:hover {
+   background-color: #fff;
+   color: #3B93C3;
+  }
+.footer a {
+text-decoration: none;
+color: #fBf3ff;
+}
