@@ -9,7 +9,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Agdasima&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.min.css">
 </head>
 <body>
   <header>
@@ -86,6 +87,9 @@ temukan pelayanan kesehatan yang berkualitas, nyaman, dan terjangkau.
           <textarea id="message" name="message" maxlength="1000" required></textarea>
           <div class="error-message" id="message-error"></div>
         </div>
+        <div>
+    <input type="hidden" id="userId" name="userId" value="">
+  </div>
         <button type="submit">Kirim</button>
       </form>
   </div>
@@ -227,5 +231,6 @@ Dengan pengalaman bertahun-tahun dan pengakuan pemerintah, Anda dapat mempercaya
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="./js/index-script.js"></script>
+<script src="./js/form.js"></script>
 </body>
 </html>
