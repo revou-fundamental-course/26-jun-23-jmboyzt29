@@ -36,22 +36,25 @@ document.getElementById('contact-form').addEventListener('submit', function(even
       userId: userId
     };
 
-    // Kirim data ke server menggunakan metode POST
-    fetch('./form.json', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-    .then(function(response) {
-      // Tangani respon dari server
+    // Kirim data ke localStorage
+localStorage.setItem('formData', JSON.stringify(data));
+
       console.log('Form berhasil dikirim');
-    })
-    .catch(function(error) {
-      // Tangani kesalahan
-      console.error('Terjadi kesalahan saat mengirim form:', error);
-    });
+      Swal.fire({
+    icon: 'success',
+    title: 'Pesan berhasil dikirim',
+    text: 'Terima kasih atas dukungannya!',
+    showCancelButton: true,
+    confirmButtonText: 'Lihat Data',
+    cancelButtonText: 'Tutup',
+    allowOutsideClick: false
+  }).then(function(result) {
+    if (result.isConfirmed) {
+      // Redirect ke domain.com/data.html
+      window.location.href = './data.html';
+    }
+  });
+
   }
 });
 
